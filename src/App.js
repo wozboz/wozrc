@@ -1,56 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+//import './App.css';
+import {Cards} from './features/card/Card';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import { Wrap, WrapItem, Box, Spacer, IconButton, useColorMode, Divider, Input, Flex, Select } from '@chakra-ui/react';
+
+
 
 function App() {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <Flex>
+        <Box p="2">
+          <Input placeholder="Search" size="md"/>
+        </Box>
+        <Box p="2">
+          <Select>
+            <option value="o1">O1</option>
+            <option value="o2">O2</option>
+          </Select>
+        </Box>
+        <Spacer />
+        <Box>
+          <IconButton
+            icon={colorMode === 'light' ? <FaSun /> : <FaMoon />}
+            isRound="true"
+            size="lg"
+            onClick={ toggleColorMode }
+          />
+        </Box>
+      </Flex>
+      <Divider paddingTop="10px" />
+      <Wrap>
+        <WrapItem>
+          <Cards/>
+        </WrapItem>
+        <WrapItem>
+          <Cards/>
+        </WrapItem>
+        <WrapItem>
+          <Cards/>
+        </WrapItem>
+      </Wrap>
     </div>
   );
 }
