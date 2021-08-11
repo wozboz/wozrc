@@ -1,6 +1,6 @@
 import React from 'react';
 //import './App.css';
-import {Cards} from './features/card/Card';
+import {Card} from './features/card/Card';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { Wrap, WrapItem, Box, Spacer, IconButton, useColorMode, Divider, Input, Flex, Select } from '@chakra-ui/react';
 
@@ -33,13 +33,13 @@ function App() {
       <Divider paddingTop="10px" />
       <Wrap>
         <WrapItem>
-          <Cards/>
+          <Card/>
         </WrapItem>
         <WrapItem>
-          <Cards/>
+          <Card/>
         </WrapItem>
         <WrapItem>
-          <Cards/>
+          <Card/>
         </WrapItem>
       </Wrap>
     </div>

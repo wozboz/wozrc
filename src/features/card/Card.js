@@ -8,7 +8,7 @@ import {
   } from "@chakra-ui/react";
 
 
-export function Cards(){
+export function Card(){
     return (
       <Flex
         p={50}
@@ -97,4 +97,3 @@ export function Cards(){
       </Flex>
     );
   };
-  
