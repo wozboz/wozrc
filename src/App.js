@@ -1,8 +1,8 @@
 import React from 'react';
 //import './App.css';
-import {Card} from './features/card/Card';
+import { Postoverview } from './features/postoverview/Postoverview';
 import { FaMoon, FaSun } from 'react-icons/fa';
-import { Wrap, WrapItem, Box, Spacer, IconButton, useColorMode, Divider, Input, Flex, Select } from '@chakra-ui/react';
+import { Box, Spacer, IconButton, useColorMode, Divider, Input, Flex, Select } from '@chakra-ui/react';
 
 
 
@@ -21,27 +21,13 @@ function App() {
           </Select>
         </Box>
         <Spacer />
-        <Box>
-          <IconButton
+        <IconButton
             icon={colorMode === 'light' ? <FaSun /> : <FaMoon />}
-            isRound="true"
-            size="lg"
             onClick={ toggleColorMode }
           />
-        </Box>
       </Flex>
       <Divider paddingTop="10px" />
-      <Wrap>
-        <WrapItem>
-          <Card/>
-        </WrapItem>
-        <WrapItem>
-          <Card/>
-        </WrapItem>
-        <WrapItem>
-          <Card/>
-        </WrapItem>
-      </Wrap>
+        <Postoverview />
     </div>
   );
 }
