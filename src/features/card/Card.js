@@ -5,23 +5,51 @@ import {
     Flex,
     useColorModeValue,
     Link,
+    useDisclosure,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
   } from "@chakra-ui/react";
 
 
 export function Card(){
+    const { isOpen, onOpen, onClose } = useDisclosure()
     return (
       <Flex
-        p={50}
+        pt={10}
+        pl={10}
+        pr={10}
         w="full"
         alignItems="center"
         justifyContent="center"
       >
+      <>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Modal Title</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+                Test
+            </ModalBody>
+  
+            <ModalFooter>
+              Footer
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </>
         <Box
           mx="auto"
           rounded="lg"
           shadow="md"
           bg={useColorModeValue("#F9FAFB", "gray.600")}
           maxW="xl"
+          onClick={onOpen}
         >
           <Image
             roundedTop="lg"
@@ -32,7 +60,7 @@ export function Card(){
             alt="Article"
           />
   
-          <Box p={6}>
+          <Box p={5}>
             <Box>
               <chakra.span
                 fontSize="xs"

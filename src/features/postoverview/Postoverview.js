@@ -3,7 +3,7 @@ import { SimpleGrid } from '@chakra-ui/react';
 
 export function Postoverview() {
     return(
-        <SimpleGrid columns={[1, 2, 3]} spacing="20px">
+        <SimpleGrid columns={[1, 2, 3]}>
             <Card/>
             <Card/>
             <Card/>
