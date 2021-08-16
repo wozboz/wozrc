@@ -10,7 +10,13 @@ import {
   } from "@chakra-ui/react";
   import { FaMoon, FaSun } from 'react-icons/fa';
 
-export function Navbar() {
+export function Navbar(props) {
+
+    //on click on select value, pass subreddit up to App component
+    function handleSelect (e) {
+        props.onClick(e.target.value)
+    };
+
     const { colorMode, toggleColorMode } = useColorMode();
     return(
         <Box>
@@ -19,9 +25,9 @@ export function Navbar() {
             <Input placeholder="Search" size="md"/>
             </Box>
             <Box p="2">
-            <Select>
-                <option value="o1">O1</option>
-                <option value="o2">O2</option>
+            <Select onClick={ handleSelect }>
+                <option value="popular">Popular</option>
+                <option value="animals">Animals</option>
             </Select>
             </Box>
             <Spacer />
