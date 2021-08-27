@@ -7,14 +7,16 @@ import {
     Heading,
     Stack,
     Center,
-    Text
+    Text,
+    Skeleton
   } from "@chakra-ui/react";
   import { PostModal } from '../modal/Modal';
 
 export function Card(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  
   return (
+
     <Center py={6}
     alignSelf="start">
       <Box
@@ -28,6 +30,7 @@ export function Card(props) {
         overflow={'hidden'}
         onClick={onOpen}
         >
+      <Skeleton isLoaded={!props.loading}>
         <Box
           bg={'gray.100'}
           mt={-6}
@@ -64,7 +67,9 @@ export function Card(props) {
               <Badge variant="outline">Comments: {props.numcomments}</Badge>
             </Stack>
           </Stack>
+          </Skeleton>
       </Box>
     </Center>
+    
   );
 }

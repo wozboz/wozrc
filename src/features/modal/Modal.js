@@ -36,7 +36,7 @@ export function PostModal(props) {
          <Modal isOpen={props.isOpen} onClose={props.onClose}>
            <ModalOverlay />
            <ModalContent>
-                <ModalHeader width="95%"><Heading as="h2" size="xl">{props.title}</Heading>
+                <ModalHeader width="95%"><Heading as="h2" size="lg">{props.title}</Heading>
                   <Image
                   mt={3}
               boxSize="100%"
@@ -48,7 +48,7 @@ export function PostModal(props) {
                 <ModalCloseButton  />        
             <ModalBody>
             <Text size="sm">{props.selftext}</Text>
-            <Heading as="h2" size="lg" mb={3} mt={3}>Comments</Heading>
+            <Heading as="h2" size="md" mb={3} mt={3}>Comments</Heading>
             {postData.map(post => (
                 <Comment key={post.data.id} comment={post.data.body} author={post.data.author} upvotes={post.data.ups}></Comment>
               ))}
