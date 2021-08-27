@@ -28,6 +28,9 @@ export function Navbar(props) {
             <Select onClick={ handleSelect }>
                 <option value="popular">Popular</option>
                 <option value="animals">Animals</option>
+                <option value="pics">Pics</option>
+                <option value="askreddit">AskReddit</option>
+                <option value="tennis">Tennis</option>
             </Select>
             </Box>
             <Spacer />

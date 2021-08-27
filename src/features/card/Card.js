@@ -34,12 +34,12 @@ export function Card(props) {
           mx={-6}
           mb={6}>
           <Image
-            src={props.thumbnail}
-            objectFit="cover"
-
+            boxSize="100%"
+            src={props.imageurl}
+            fit="contain"
           />
         </Box>
-        <PostModal isOpen={isOpen} onClose={onClose} title={props.title} />
+        <PostModal isOpen={isOpen} onClose={onClose} title={props.title} link={props.permalink} imageurl={props.imageurl} selftext={props.selftext}/>
         <Stack
         justify-content="space-between">
           <Text

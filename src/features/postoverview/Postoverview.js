@@ -6,9 +6,6 @@ export function Postoverview(props) {
 
     const [redditPosts, setRedditPosts] = useState([]);
 
-    console.log(props.dropdownValue)
-
-
     //fetch new posts every time drodpownValue changes
     useEffect(() => {
         fetch(`https://www.reddit.com/r/${props.dropdownValue}.json`)
@@ -24,7 +21,7 @@ export function Postoverview(props) {
     [props.dropdownValue])
 
     if (redditPosts.length !== 0) {
-        console.log(redditPosts[1])
+        console.log(redditPosts)
     }
 
     return(
@@ -32,7 +29,7 @@ export function Postoverview(props) {
             <>
                 {redditPosts.length === 0 ? <Card/> : redditPosts.map(post => (
                     <Card key={post.data.id} title={post.data.title} author={post.data.author} numcomments={post.data.num_comments} score={post.data.score} subreddit={post.data.subreddit} 
-                    thumbnail={post.data.preview === undefined ? "" : post.data}/>
+                    thumbnail={post.data.preview === undefined ? "" : post.data} imageurl={post.data.url} permalink={post.data.permalink} selftext={post.data.selftext}/>
                 ))}
             </>
         </SimpleGrid>
