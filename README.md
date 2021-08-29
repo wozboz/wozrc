@@ -21,10 +21,11 @@ Project is: **in progress**.
 - Click opens detailed View with comments
 - Fully mobile compatible
 - Dark Mode
+- Search through shown posts of current subreddit
 
 ## Future Work
-- Add Redux for state management
 - Add nested comments/comment replies
+- Add infinite scroll
 
 ## Acknowledgements
 - This is a project on Codecademy's [Full Stack Engineer Career Path](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path/).

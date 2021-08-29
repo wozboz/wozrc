@@ -19,18 +19,19 @@ export function Card(props) {
 
     <Center py={6}
     alignSelf="start">
+      <Skeleton isLoaded={!props.loading}>
       <Box
         maxW={'445px'}
         h={'full'}
         w={'full'}
-        bg={useColorModeValue('white', 'gray.900')}
+        bg={useColorModeValue('white', 'gray.700')}
         boxShadow={'2xl'}
         rounded={'md'}
         p={6}
         overflow={'hidden'}
         onClick={onOpen}
         >
-      <Skeleton isLoaded={!props.loading}>
+      
         <Box
           bg={'gray.100'}
           mt={-6}
@@ -67,8 +68,8 @@ export function Card(props) {
               <Badge variant="outline">Comments: {props.numcomments}</Badge>
             </Stack>
           </Stack>
-          </Skeleton>
       </Box>
+      </Skeleton>
     </Center>
     
   );
