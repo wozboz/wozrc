@@ -1,5 +1,5 @@
 # Tea Cozy
-This is a React Reddit Client, created while doing the Codecademy Full Stack Engineer Path.
+This is a React Reddit Client, created while doing the Codecademy Full Stack Engineer Path. It can be seen and used [here](https://wozrc.netlify.app)
 
 ## Table of Contents
 * [Technologies Used](#technologies-used)
